@@ -1385,3 +1385,22 @@ formally approved. P9A-04 does not authorize SQL, a migration, or any DEV work.
 - **BOUNDARY:** no DEV/Production query, no GRANT/REVOKE/CREATE POLICY/ALTER, no
   RPC call, no posting, no retry, no commit and no push. Running the diagnostic
   on DEV requires a separate explicit read-only authorization.
+
+## Unit S3 real DEV posting and postverify evidence (2026-11-01)
+
+- **VERIFIED — operator-observed on DEV:** the DEV S3 smoke flow executed
+  `hasad.post_sales_invoice` once for invoice
+  `86e7a408-479f-4d41-b699-6940cd6b50c8` and reported success. The official
+  invoice number is `SI-2026-0001` and the journal entry number is
+  `JE-2026-0001`. The posting button was pressed once only; there was no retry
+  and no second press.
+- **VERIFIED — owner-reported postverify result:** the post-posting verification
+  reported 26 PASS, 0 FAIL and 0 WARN. It covered the posted invoice state,
+  zero-tax outcome, unique official numbering, balanced journal, inventory
+  movement, audit rows and idempotency single use. VAT remains disabled.
+- **BOUNDARY:** the operator reports no manual DEV SQL execution and no
+  diagnostic-file execution by them, no additional invoice posting, and no
+  Production operation. This evidence supersedes the earlier *not executed on
+  DEV* state for this single authorized smoke target only; it does not enable
+  the normal sales-posting UI or authorize any new posting, database change,
+  rollback, commit or push.
