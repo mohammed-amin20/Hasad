@@ -50,3 +50,6 @@ app.*.map.json
 # Hasad ERP V2 - local DEV inventory outputs (never tracked)
 /local_audit/
 
+
+# Node.js dependencies (local only)
+/node_modules/
