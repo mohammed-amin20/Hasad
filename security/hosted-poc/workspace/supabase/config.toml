@@ -1,0 +1,11 @@
+# Isolated hosted security POC only. This is not the repository's DEV project config.
+project_id = "hasad-v2-hosted-security-poc"
+
+[api]
+enabled = true
+schemas = ["public", "graphql_public", "hasad_api"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+major_version = 17

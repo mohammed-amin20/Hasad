@@ -1,0 +1,8 @@
+INSERT INTO hasad.accounts (id,company_id,code,name_ar,account_type) VALUES
+  ('47000000-0000-0000-0000-000000000213','20000000-0000-0000-0000-000000000201',
+   '1200','مخزون البضاعة','asset'),
+  ('47000000-0000-0000-0000-000000000214','20000000-0000-0000-0000-000000000201',
+   '9999','ربط متعارض','asset');
+INSERT INTO hasad.module_account_map (id,company_id,module,account_role,account_id) VALUES
+  ('48000000-0000-0000-0000-000000000214','20000000-0000-0000-0000-000000000201',
+   'sales','INVENTORY_CONTROL','47000000-0000-0000-0000-000000000214');

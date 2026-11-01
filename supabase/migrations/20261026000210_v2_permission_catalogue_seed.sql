@@ -1,0 +1,90 @@
+-- Hasad ERP V2 static permission catalogue seed
+-- Target: Supabase DEV sxasnunzspkuwbxiddqd (prepared only; not deployed)
+-- Depends on: 20261026000200_v2_permissions_foundation.sql
+-- Scope: exactly the 37 catalogue codes approved for review in
+-- docs/16_DATABASE_DECISION_PACKAGE.md section 11. No role rows and no
+-- role-permission mappings are inserted: roles are company-scoped and are
+-- created per company by a later approved transaction.
+--
+-- Deployment requires explicit owner approval of section 11. Do not add
+-- codes here without a new owner decision; the catalogue is migration-only.
+
+BEGIN;
+
+INSERT INTO hasad.permissions (code, module, description) VALUES
+  ('members.manage', 'members',
+    'Invite, suspend, activate, revoke, assign roles, and set permission overrides; ownership transfer remains owner-only'),
+  ('company.settings', 'company',
+    'Manage the company profile and general settings'),
+  ('company.tax', 'company',
+    'Manage the company tax configuration'),
+  ('company.numbering', 'company',
+    'Manage document numbering configuration'),
+  ('company.templates', 'company',
+    'Manage company document templates'),
+  ('coa.manage', 'coa',
+    'Manage the chart of accounts'),
+  ('journals.create', 'journals',
+    'Create draft journal entries'),
+  ('journals.post', 'journals',
+    'Post journal entries'),
+  ('journals.reverse', 'journals',
+    'Reverse posted journal entries with linked reversal entries'),
+  ('fiscal.manage', 'fiscal',
+    'Manage fiscal years and periods'),
+  ('fiscal.close', 'fiscal',
+    'Close fiscal periods; owner-only and never granted by role or override'),
+  ('parties.manage', 'parties',
+    'Manage customer and supplier party records'),
+  ('cash.create', 'cash',
+    'Create cash documents'),
+  ('cash.post', 'cash',
+    'Post cash documents'),
+  ('cash.allocate', 'cash',
+    'Allocate cash to documents or parties'),
+  ('cash.reconcile', 'cash',
+    'Reconcile cash accounts'),
+  ('cash.manage', 'cash',
+    'Manage cash accounts and configuration'),
+  ('sales.create', 'sales',
+    'Create sales documents'),
+  ('sales.post', 'sales',
+    'Post sales documents'),
+  ('sales.reverse', 'sales',
+    'Reverse posted sales documents with linked reversal entries'),
+  ('purchases.create', 'purchases',
+    'Create purchase documents'),
+  ('purchases.post', 'purchases',
+    'Post purchase documents'),
+  ('purchases.reverse', 'purchases',
+    'Reverse posted purchase documents with linked reversal entries'),
+  ('inventory.manage', 'inventory',
+    'Manage inventory master data and configuration'),
+  ('inventory.post', 'inventory',
+    'Post inventory movements'),
+  ('inventory.adjust', 'inventory',
+    'Post inventory adjustments; owner/admin tier and no allow-override'),
+  ('expenses.create', 'expenses',
+    'Create expense documents'),
+  ('expenses.post', 'expenses',
+    'Post expense documents'),
+  ('expenses.reverse', 'expenses',
+    'Reverse posted expense documents with linked reversal entries'),
+  ('expenses.manage', 'expenses',
+    'Manage expense categories and configuration'),
+  ('reports.view', 'reports',
+    'View reports'),
+  ('reports.export', 'reports',
+    'Export reports'),
+  ('payroll.setup', 'payroll',
+    'Manage payroll setup and employee payroll data'),
+  ('payroll.run', 'payroll',
+    'Run payroll calculations'),
+  ('payroll.reverse', 'payroll',
+    'Reverse posted payroll runs with linked reversal entries'),
+  ('payroll.view', 'payroll',
+    'View payroll data'),
+  ('payroll.payslip', 'payroll',
+    'Generate payroll payslips');
+
+COMMIT;

@@ -1,0 +1,26 @@
+# Protected Objects (Must Not Be Removed)
+
+## Managed Schemas (Preserve)
+auth, storage, realtime, cron, extensions, net, vault, graphql, graphql_public, pgbouncer, information_schema, pg_catalog
+
+## Platform Roles (Preserve)
+supabase_admin, supabase_auth_admin, dashboard_user, pgbouncer, service_role, anon, authenticated
+
+## Extensions (Preserve unless explicitly authorized to drop)
+pg_cron, pg_stat_statements, pgcrypto, plpgsql, supabase_vault, uuid-ossp (and others present)
+
+## Extension-Owned in public (NOT legacy - Preserve)
+- pgtap: 1,079 functions + views pg_all_foreign_keys, tap_funky (owner supabase_admin)
+- pg_net: 3 objects
+
+## Platform Keys/Config (Preserve)
+anon, service_role (legacy JWT), default publishable/secret - platform managed
+
+## V2 Schemas (Do not touch/create)
+hasad, hasad_api (currently absent)
+
+## Notes
+- Never modify auth schema tables directly
+- Never drop managed schemas
+- Never drop extensions without separate explicit authorization
+- Never expose secrets/keys

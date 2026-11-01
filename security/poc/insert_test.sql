@@ -1,0 +1,12 @@
+BEGIN;
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+INSERT INTO auth.users (id, email) VALUES ('11111111-1111-1111-1111-111111111111', 'user1@test.com'), ('22222222-2222-2222-2222-222222222222', 'user2@test.com') ON CONFLICT DO NOTHING;
+INSERT INTO hasad.user_profiles (id) VALUES ('11111111-1111-1111-1111-111111111111'), ('22222222-2222-2222-2222-222222222222') ON CONFLICT DO NOTHING;
+INSERT INTO hasad.companies (id, created_by, status) VALUES ('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', '11111111-1111-1111-1111-111111111111', 'active'), ('bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', '22222222-2222-2222-2222-222222222222', 'active') ON CONFLICT DO NOTHING;
+INSERT INTO hasad.roles (id, company_id, code, is_system) VALUES ('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa01', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'admin', true), ('bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbb01', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', 'sales', true) ON CONFLICT DO NOTHING;
+INSERT INTO hasad.company_memberships (id, company_id, user_id, role_id, is_owner, status) VALUES ('11111111-1111-1111-1111-111111111112', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', '11111111-1111-1111-1111-111111111111', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaa01', true, 'active'), ('22222222-2222-2222-2222-222222222223', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', '22222222-2222-2222-2222-222222222222', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbb01', false, 'active') ON CONFLICT DO NOTHING;
+COMMIT;
+BEGIN;
+SET LOCAL "request.jwt.claim.sub" = '11111111-1111-1111-1111-111111111111';
+SELECT 'whoami1', * FROM hasad_api.whoami();
+ROLLBACK;

@@ -1,0 +1,969 @@
+{
+  "evidence": "OBSERVED",
+  "observed_at_utc": "2026-10-28T17:29:45.8086488Z",
+  "project_ref": "sxasnunzspkuwbxiddqd",
+  "project_name": "Hasad-erp-dev",
+  "baseline": {
+    "api_contract_columns": [
+      {
+        "column": "id",
+        "nullable": "NO",
+        "table": "companies",
+        "type": "uuid"
+      },
+      {
+        "column": "created_by",
+        "nullable": "NO",
+        "table": "companies",
+        "type": "uuid"
+      },
+      {
+        "column": "status",
+        "nullable": "NO",
+        "table": "companies",
+        "type": "text"
+      },
+      {
+        "column": "id",
+        "nullable": "NO",
+        "table": "company_memberships",
+        "type": "uuid"
+      },
+      {
+        "column": "company_id",
+        "nullable": "NO",
+        "table": "company_memberships",
+        "type": "uuid"
+      },
+      {
+        "column": "user_id",
+        "nullable": "NO",
+        "table": "company_memberships",
+        "type": "uuid"
+      },
+      {
+        "column": "role_id",
+        "nullable": "YES",
+        "table": "company_memberships",
+        "type": "uuid"
+      },
+      {
+        "column": "is_owner",
+        "nullable": "NO",
+        "table": "company_memberships",
+        "type": "boolean"
+      },
+      {
+        "column": "status",
+        "nullable": "NO",
+        "table": "company_memberships",
+        "type": "text"
+      },
+      {
+        "column": "invited_by",
+        "nullable": "YES",
+        "table": "company_memberships",
+        "type": "uuid"
+      },
+      {
+        "column": "revoked_at",
+        "nullable": "YES",
+        "table": "company_memberships",
+        "type": "timestamp with time zone"
+      },
+      {
+        "column": "company_id",
+        "nullable": "NO",
+        "table": "company_settings",
+        "type": "uuid"
+      },
+      {
+        "column": "name_ar",
+        "nullable": "NO",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "name_en",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "display_name",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "address_line1",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "address_line2",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "city",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "region",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "postal_code",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "phone",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "email",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "website",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "tax_id",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "registry_no",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "currency",
+        "nullable": "NO",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "vat_enabled",
+        "nullable": "NO",
+        "table": "company_settings",
+        "type": "boolean"
+      },
+      {
+        "column": "logo_storage_path",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "text"
+      },
+      {
+        "column": "preferences",
+        "nullable": "NO",
+        "table": "company_settings",
+        "type": "jsonb"
+      },
+      {
+        "column": "updated_at",
+        "nullable": "NO",
+        "table": "company_settings",
+        "type": "timestamp with time zone"
+      },
+      {
+        "column": "updated_by",
+        "nullable": "YES",
+        "table": "company_settings",
+        "type": "uuid"
+      },
+      {
+        "column": "code",
+        "nullable": "NO",
+        "table": "permissions",
+        "type": "text"
+      },
+      {
+        "column": "module",
+        "nullable": "NO",
+        "table": "permissions",
+        "type": "text"
+      },
+      {
+        "column": "description",
+        "nullable": "NO",
+        "table": "permissions",
+        "type": "text"
+      },
+      {
+        "column": "id",
+        "nullable": "NO",
+        "table": "products",
+        "type": "uuid"
+      },
+      {
+        "column": "company_id",
+        "nullable": "NO",
+        "table": "products",
+        "type": "uuid"
+      },
+      {
+        "column": "code",
+        "nullable": "NO",
+        "table": "products",
+        "type": "text"
+      },
+      {
+        "column": "name_ar",
+        "nullable": "NO",
+        "table": "products",
+        "type": "text"
+      },
+      {
+        "column": "name_en",
+        "nullable": "YES",
+        "table": "products",
+        "type": "text"
+      },
+      {
+        "column": "barcode",
+        "nullable": "YES",
+        "table": "products",
+        "type": "text"
+      },
+      {
+        "column": "category_id",
+        "nullable": "YES",
+        "table": "products",
+        "type": "uuid"
+      },
+      {
+        "column": "base_uom_id",
+        "nullable": "NO",
+        "table": "products",
+        "type": "uuid"
+      },
+      {
+        "column": "track_inventory",
+        "nullable": "NO",
+        "table": "products",
+        "type": "boolean"
+      },
+      {
+        "column": "is_active",
+        "nullable": "NO",
+        "table": "products",
+        "type": "boolean"
+      },
+      {
+        "column": "role_id",
+        "nullable": "NO",
+        "table": "role_permissions",
+        "type": "uuid"
+      },
+      {
+        "column": "permission_code",
+        "nullable": "NO",
+        "table": "role_permissions",
+        "type": "text"
+      },
+      {
+        "column": "id",
+        "nullable": "NO",
+        "table": "roles",
+        "type": "uuid"
+      },
+      {
+        "column": "company_id",
+        "nullable": "NO",
+        "table": "roles",
+        "type": "uuid"
+      },
+      {
+        "column": "code",
+        "nullable": "NO",
+        "table": "roles",
+        "type": "text"
+      },
+      {
+        "column": "is_system",
+        "nullable": "NO",
+        "table": "roles",
+        "type": "boolean"
+      },
+      {
+        "column": "membership_id",
+        "nullable": "NO",
+        "table": "user_permission_overrides",
+        "type": "uuid"
+      },
+      {
+        "column": "permission_code",
+        "nullable": "NO",
+        "table": "user_permission_overrides",
+        "type": "text"
+      },
+      {
+        "column": "effect",
+        "nullable": "NO",
+        "table": "user_permission_overrides",
+        "type": "text"
+      }
+    ],
+    "api_contract_constraints": [
+      {
+        "definition": "FOREIGN KEY (created_by) REFERENCES hasad.user_profiles(id) ON DELETE RESTRICT",
+        "name": "companies_created_by_fkey",
+        "table": "companies",
+        "type": "f"
+      },
+      {
+        "definition": "PRIMARY KEY (id)",
+        "name": "companies_pkey",
+        "table": "companies",
+        "type": "p"
+      },
+      {
+        "definition": "CHECK ((status = ANY (ARRAY['active'::text, 'suspended'::text])))",
+        "name": "companies_status_check",
+        "table": "companies",
+        "type": "c"
+      },
+      {
+        "definition": "FOREIGN KEY (company_id) REFERENCES hasad.companies(id) ON DELETE RESTRICT",
+        "name": "company_memberships_company_id_fkey",
+        "table": "company_memberships",
+        "type": "f"
+      },
+      {
+        "definition": "FOREIGN KEY (company_id, role_id) REFERENCES hasad.roles(company_id, id) ON DELETE RESTRICT",
+        "name": "company_memberships_company_role_fkey",
+        "table": "company_memberships",
+        "type": "f"
+      },
+      {
+        "definition": "UNIQUE (company_id, user_id)",
+        "name": "company_memberships_company_user_key",
+        "table": "company_memberships",
+        "type": "u"
+      },
+      {
+        "definition": "FOREIGN KEY (invited_by) REFERENCES hasad.user_profiles(id) ON DELETE RESTRICT",
+        "name": "company_memberships_invited_by_fkey",
+        "table": "company_memberships",
+        "type": "f"
+      },
+      {
+        "definition": "PRIMARY KEY (id)",
+        "name": "company_memberships_pkey",
+        "table": "company_memberships",
+        "type": "p"
+      },
+      {
+        "definition": "CHECK (((status = 'revoked'::text) = (revoked_at IS NOT NULL)))",
+        "name": "company_memberships_revoked_at_check",
+        "table": "company_memberships",
+        "type": "c"
+      },
+      {
+        "definition": "CHECK (((role_id IS NOT NULL) OR is_owner))",
+        "name": "company_memberships_role_required_for_non_owner_check",
+        "table": "company_memberships",
+        "type": "c"
+      },
+      {
+        "definition": "CHECK ((status = ANY (ARRAY['active'::text, 'suspended'::text, 'revoked'::text])))",
+        "name": "company_memberships_status_check",
+        "table": "company_memberships",
+        "type": "c"
+      },
+      {
+        "definition": "FOREIGN KEY (user_id) REFERENCES hasad.user_profiles(id) ON DELETE RESTRICT",
+        "name": "company_memberships_user_id_fkey",
+        "table": "company_memberships",
+        "type": "f"
+      },
+      {
+        "definition": "UNIQUE (user_id)",
+        "name": "company_memberships_user_key",
+        "table": "company_memberships",
+        "type": "u"
+      },
+      {
+        "definition": "FOREIGN KEY (company_id) REFERENCES hasad.companies(id) ON DELETE RESTRICT",
+        "name": "company_settings_company_id_fkey",
+        "table": "company_settings",
+        "type": "f"
+      },
+      {
+        "definition": "CHECK ((currency = 'ILS'::text))",
+        "name": "company_settings_currency_check",
+        "table": "company_settings",
+        "type": "c"
+      },
+      {
+        "definition": "PRIMARY KEY (company_id)",
+        "name": "company_settings_pkey",
+        "table": "company_settings",
+        "type": "p"
+      },
+      {
+        "definition": "CHECK ((jsonb_typeof(preferences) = 'object'::text))",
+        "name": "company_settings_preferences_object_check",
+        "table": "company_settings",
+        "type": "c"
+      },
+      {
+        "definition": "FOREIGN KEY (updated_by) REFERENCES hasad.user_profiles(id) ON DELETE RESTRICT",
+        "name": "company_settings_updated_by_fkey",
+        "table": "company_settings",
+        "type": "f"
+      },
+      {
+        "definition": "CHECK ((module = split_part(code, '.'::text, 1)))",
+        "name": "permissions_module_prefix_check",
+        "table": "permissions",
+        "type": "c"
+      },
+      {
+        "definition": "PRIMARY KEY (code)",
+        "name": "permissions_pkey",
+        "table": "permissions",
+        "type": "p"
+      },
+      {
+        "definition": "UNIQUE (barcode)",
+        "name": "products_barcode_key",
+        "table": "products",
+        "type": "u"
+      },
+      {
+        "definition": "FOREIGN KEY (company_id, category_id) REFERENCES hasad.product_categories(company_id, id) ON DELETE RESTRICT",
+        "name": "products_company_category_fkey",
+        "table": "products",
+        "type": "f"
+      },
+      {
+        "definition": "UNIQUE (company_id, code)",
+        "name": "products_company_code_key",
+        "table": "products",
+        "type": "u"
+      },
+      {
+        "definition": "FOREIGN KEY (company_id) REFERENCES hasad.companies(id) ON DELETE RESTRICT",
+        "name": "products_company_id_fkey",
+        "table": "products",
+        "type": "f"
+      },
+      {
+        "definition": "UNIQUE (company_id, id)",
+        "name": "products_company_id_id_key",
+        "table": "products",
+        "type": "u"
+      },
+      {
+        "definition": "FOREIGN KEY (company_id, base_uom_id) REFERENCES hasad.units_of_measure(company_id, id) ON DELETE RESTRICT",
+        "name": "products_company_uom_fkey",
+        "table": "products",
+        "type": "f"
+      },
+      {
+        "definition": "PRIMARY KEY (id)",
+        "name": "products_pkey",
+        "table": "products",
+        "type": "p"
+      },
+      {
+        "definition": "FOREIGN KEY (permission_code) REFERENCES hasad.permissions(code) ON DELETE RESTRICT",
+        "name": "role_permissions_permission_code_fkey",
+        "table": "role_permissions",
+        "type": "f"
+      },
+      {
+        "definition": "PRIMARY KEY (role_id, permission_code)",
+        "name": "role_permissions_pkey",
+        "table": "role_permissions",
+        "type": "p"
+      },
+      {
+        "definition": "FOREIGN KEY (role_id) REFERENCES hasad.roles(id) ON DELETE RESTRICT",
+        "name": "role_permissions_role_id_fkey",
+        "table": "role_permissions",
+        "type": "f"
+      },
+      {
+        "definition": "UNIQUE (company_id, code)",
+        "name": "roles_company_code_key",
+        "table": "roles",
+        "type": "u"
+      },
+      {
+        "definition": "FOREIGN KEY (company_id) REFERENCES hasad.companies(id) ON DELETE RESTRICT",
+        "name": "roles_company_id_fkey",
+        "table": "roles",
+        "type": "f"
+      },
+      {
+        "definition": "UNIQUE (company_id, id)",
+        "name": "roles_company_id_id_key",
+        "table": "roles",
+        "type": "u"
+      },
+      {
+        "definition": "PRIMARY KEY (id)",
+        "name": "roles_pkey",
+        "table": "roles",
+        "type": "p"
+      },
+      {
+        "definition": "CHECK ((effect = ANY (ARRAY['allow'::text, 'deny'::text])))",
+        "name": "user_permission_overrides_effect_check",
+        "table": "user_permission_overrides",
+        "type": "c"
+      },
+      {
+        "definition": "FOREIGN KEY (membership_id) REFERENCES hasad.company_memberships(id) ON DELETE RESTRICT",
+        "name": "user_permission_overrides_membership_id_fkey",
+        "table": "user_permission_overrides",
+        "type": "f"
+      },
+      {
+        "definition": "FOREIGN KEY (permission_code) REFERENCES hasad.permissions(code) ON DELETE RESTRICT",
+        "name": "user_permission_overrides_permission_code_fkey",
+        "table": "user_permission_overrides",
+        "type": "f"
+      },
+      {
+        "definition": "PRIMARY KEY (membership_id, permission_code)",
+        "name": "user_permission_overrides_pkey",
+        "table": "user_permission_overrides",
+        "type": "p"
+      }
+    ],
+    "api_named_types": [],
+    "api_relations": [],
+    "application_role_memberships": [
+      {
+        "admin_option": false,
+        "granted_role": "anon",
+        "inherit_option": false,
+        "member": "authenticator"
+      },
+      {
+        "admin_option": false,
+        "granted_role": "authenticated",
+        "inherit_option": false,
+        "member": "authenticator"
+      },
+      {
+        "admin_option": true,
+        "granted_role": "anon",
+        "inherit_option": true,
+        "member": "postgres"
+      },
+      {
+        "admin_option": true,
+        "granted_role": "authenticated",
+        "inherit_option": true,
+        "member": "postgres"
+      },
+      {
+        "admin_option": false,
+        "granted_role": "anon",
+        "inherit_option": false,
+        "member": "supabase_realtime_admin"
+      },
+      {
+        "admin_option": false,
+        "granted_role": "authenticated",
+        "inherit_option": false,
+        "member": "supabase_realtime_admin"
+      }
+    ],
+    "application_roles": [
+      {
+        "bypass_rls": false,
+        "create_db": false,
+        "create_role": false,
+        "inherit": true,
+        "login": false,
+        "name": "anon",
+        "superuser": false
+      },
+      {
+        "bypass_rls": false,
+        "create_db": false,
+        "create_role": false,
+        "inherit": true,
+        "login": false,
+        "name": "authenticated",
+        "superuser": false
+      },
+      {
+        "bypass_rls": false,
+        "create_db": false,
+        "create_role": false,
+        "inherit": false,
+        "login": true,
+        "name": "authenticator",
+        "superuser": false
+      },
+      {
+        "bypass_rls": true,
+        "create_db": true,
+        "create_role": true,
+        "inherit": true,
+        "login": true,
+        "name": "postgres",
+        "superuser": false
+      },
+      {
+        "bypass_rls": true,
+        "create_db": false,
+        "create_role": false,
+        "inherit": true,
+        "login": false,
+        "name": "service_role",
+        "superuser": false
+      }
+    ],
+    "application_table_grants": [],
+    "functions": [],
+    "migration_versions": [
+      "20261026000000",
+      "20261026000100",
+      "20261026000200",
+      "20261026000210",
+      "20261027000300",
+      "20261027000400",
+      "20261028000500",
+      "20261028000600",
+      "20261028000700",
+      "20261029000800",
+      "20261029000900",
+      "20261029001000"
+    ],
+    "policies": [],
+    "postgrest_schema_settings": [],
+    "products_read_catalogue": [],
+    "products_read_override_counts": [],
+    "products_read_role_mappings": [],
+    "schemas": [
+      {
+        "anon_usage": false,
+        "authenticated_usage": false,
+        "name": "hasad",
+        "owner": "postgres"
+      },
+      {
+        "anon_usage": false,
+        "authenticated_usage": false,
+        "name": "hasad_api",
+        "owner": "postgres"
+      }
+    ],
+    "tables_rls": [
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "accounts"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "audit_log"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "bank_accounts"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "cashboxes"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "companies"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "company_invitations"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "company_memberships"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "company_settings"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "departments"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "doc_numbers"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "document_types"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "employees"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "expense_attachments"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "expense_categories"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "expense_document_lines"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "expense_documents"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "expense_receipt_dedup"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "fiscal_periods"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "fiscal_years"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "job_titles"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "journal_entries"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "journal_lines"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "module_account_map"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "parties"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "payment_allocations"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "payment_documents"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "permissions"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "product_categories"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "product_uom_conversions"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "products"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "purchase_document_lines"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "purchase_documents"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "reconciliation_items"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "reconciliation_statements"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "role_permissions"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "roles"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "sales_document_lines"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "sales_documents"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "stock_count_lines"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "stock_counts"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "stock_levels"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "stock_movements"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "tax_rates"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "units_of_measure"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "user_permission_overrides"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "user_profiles"
+      },
+      {
+        "force_rls": true,
+        "owner": "postgres",
+        "rls": true,
+        "table": "warehouses"
+      }
+    ],
+    "target": {
+      "database": "postgres",
+      "query_role": "postgres",
+      "server_version": "17.6"
+    }
+  }
+}

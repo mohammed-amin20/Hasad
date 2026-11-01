@@ -1,0 +1,6 @@
+CREATE OR REPLACE FUNCTION pg_temp.assert_true(p_ok boolean,p_label text) RETURNS void LANGUAGE plpgsql AS $$ BEGIN IF p_ok IS NOT TRUE THEN RAISE EXCEPTION 'ASSERT_FAIL: %',p_label; END IF; END $$;
+SELECT pg_temp.assert_true((SELECT count(*)=1 FROM hasad.fiscal_years WHERE company_id='91000000-0000-0000-0000-000000000001' AND start_date=DATE '2026-01-01' AND end_date=DATE '2026-12-31' AND status='open' AND reopen_count=0),'approved fiscal year exists exactly once');
+SELECT pg_temp.assert_true((SELECT count(*)=1 FROM hasad.document_types WHERE company_id='91000000-0000-0000-0000-000000000001' AND code='SI' AND name_ar='فاتورة مبيعات' AND issuance='posting' AND is_active AND pad_length=4 AND format_prefix IS NULL),'approved document type exists exactly once');
+SELECT pg_temp.assert_true((SELECT count(*)=0 FROM hasad.fiscal_years WHERE company_id='91000000-0000-0000-0000-000000000002') AND (SELECT count(*)=0 FROM hasad.document_types WHERE company_id='91000000-0000-0000-0000-000000000002'),'other company unchanged');
+SELECT pg_temp.assert_true((SELECT count(*)=0 FROM hasad.doc_numbers) AND (SELECT count(*)=0 FROM hasad.fiscal_periods),'no numbering key or fiscal period created');
+SELECT 'PASS: S2 Abo Amen reference configuration harness' AS result;
