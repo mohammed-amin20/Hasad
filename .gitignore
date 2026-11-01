@@ -53,3 +53,8 @@ app.*.map.json
 
 # Node.js dependencies (local only)
 /node_modules/
+
+# Supabase-related local materials
+/supabase/
+/security/
+/scripts/
